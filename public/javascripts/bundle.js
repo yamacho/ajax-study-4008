@@ -116,6 +116,12 @@ movingButton.click(function () {
     'marginLeft': '20px'
   }, 1000);
 });
+var loadavg = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#loadavg');
+setInterval(function () {
+  jquery__WEBPACK_IMPORTED_MODULE_0___default.a.get('/server-status', {}, function (data) {
+    loadavg.text(data.loadavg.toString());
+  });
+}, 10);
 
 /***/ }),
 /* 1 */
